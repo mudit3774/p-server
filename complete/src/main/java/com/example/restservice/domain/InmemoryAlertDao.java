@@ -7,9 +7,19 @@ import java.util.Set;
 
 public class InmemoryAlertDao implements AlertDao {
 
-    private static final Set<Alert> alerts = new HashSet<>();
+    // Note : Yes, we all hate static variable, but it is used as
+    // a replacement for a data store which should not be present in
+    // the actual implementation of alert DAO
+    // TODO : Move this to separate class to make this class testable
+    private static Set<Alert> alerts = new HashSet<>();
 
     public InmemoryAlertDao() {
+    }
+
+    // Note : This ugly looking function is to reset alerts for testing. Again,
+    // this complication is introduced only in the in-memory DAO
+    public void resetAlerts() {
+        alerts = new HashSet<>();
     }
 
     @Override
