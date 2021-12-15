@@ -26,7 +26,7 @@ public class AlertController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public void createAlerts(@RequestBody CreateAlertsRequest request) {
-        //alertService.addAlerts(request.getAlerts());
+        alertService.addAlert(request.getAlerts());
     }
 
     @KafkaListener(topics = "socalerts", groupId = "service")
