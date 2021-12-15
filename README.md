@@ -1,7 +1,7 @@
 About
 =====
 
-p-server listens to alerts create from p-agent and provides a search API over it
+p-server listens to alerts from [p-agent](https://github.com/mudit3774/p-agent) and provides a search API over it
 
 Requirement 
 ===========
@@ -20,9 +20,9 @@ Setup
 Testing
 =======
 
-Create some alerts (In production, alerts would be created though Kafka)
+Create some alerts (convinience API for testing)
 
-'
+`
 curl -X POST \
 http://localhost:8080/alerts \
 -H 'cache-control: no-cache' \
@@ -42,15 +42,39 @@ http://localhost:8080/alerts \
 "timestamp" : 20,
 "filename" : "sdsj"
 }]
-}'
+}
+`
 
 This should return 200 OK.
 
 Search for all alerts :
-'
+
+`
 curl -X GET \
 http://localhost:8080/search \
 -H 'cache-control: no-cache' \
 -H 'content-type: application/x-www-form-urlencoded' \
 -H 'postman-token: 8ef1a0bb-fb79-9826-b7e0-fc8884f533b5'
-'
+`
+
+and this should return alerts
+
+
+`
+[
+    {
+        "host": "H7",
+        "app": "B",
+        "maskedLine": null,
+        "timestamp": 5,
+        "filename": "sdsj"
+    },
+    {
+        "host": "H8",
+        "app": "B",
+        "maskedLine": null,
+        "timestamp": 20,
+        "filename": "sdsj"
+    }
+]
+`
