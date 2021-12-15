@@ -3,22 +3,23 @@ package com.example.restservice.controller;
 import com.example.restservice.domain.Alert;
 
 import java.util.List;
+import java.util.Set;
 
 public class CreateAlertsRequest {
-    private List<Alert> alerts;
+    private Set<Alert> alerts;
 
     public CreateAlertsRequest() {
     }
 
-    public void setAlerts(List<Alert> alerts) {
+    public void setAlerts(Set<Alert> alerts) {
         this.alerts = alerts;
     }
 
-    public CreateAlertsRequest(List<Alert> alertList) {
+    public CreateAlertsRequest(Set<Alert> alertList) {
         this.alerts = alertList;
     }
 
-    public List<Alert> getAlerts() {
+    public Set<Alert> getAlerts() {
         return alerts;
     }
 }

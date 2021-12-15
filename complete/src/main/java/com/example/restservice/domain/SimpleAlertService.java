@@ -12,7 +12,7 @@ public class SimpleAlertService implements AlertService {
     }
 
     @Override
-    public void addAlerts(List<Alert> alertList) {
+    public void addAlert(Set<Alert> alertList) {
         this.alertDao.addAlerts(alertList);
     }
 

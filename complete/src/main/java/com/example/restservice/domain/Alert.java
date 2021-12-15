@@ -9,21 +9,6 @@ public class Alert {
     private Long timestamp;
     private String filename;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Alert alert = (Alert) o;
-        return Objects.equals(host, alert.host) &&
-                Objects.equals(app, alert.app) &&
-                Objects.equals(maskedLine, alert.maskedLine) &&
-                Objects.equals(filename, alert.filename);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(host, app, maskedLine, filename);
-    }
 
     public Alert(String host, String app, String maskedLine, Long timestamp, String filename) {
         this.host = host;
@@ -31,6 +16,22 @@ public class Alert {
         this.maskedLine = maskedLine;
         this.timestamp = timestamp;
         this.filename = filename;
+    }
+
+    public Alert() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Alert alert = (Alert) o;
+        return Objects.equals(host, alert.host) && Objects.equals(app, alert.app) && Objects.equals(maskedLine, alert.maskedLine) && Objects.equals(timestamp, alert.timestamp) && Objects.equals(filename, alert.filename);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(host, app, maskedLine, timestamp, filename);
     }
 
     public String getHost() {
