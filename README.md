@@ -1,7 +1,7 @@
 About
 =====
 
-p-server listens to alerts create from p-agent and provides a search API over it
+p-server listens to alerts from [p-agent](https://github.com/mudit3774/p-agent) and provides a search API over it
 
 Requirement 
 ===========
