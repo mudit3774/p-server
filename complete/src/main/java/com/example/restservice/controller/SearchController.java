@@ -29,7 +29,7 @@ public class SearchController {
     // TODO : Paginate API
     // TODO : Add validations -> startTime <= endTime [BadRequest, 400]
     // TODO : Add exception translation
-    @GetMapping("v" + MINUS_ONE + "/alert/search")
+    @GetMapping("v1/alert/search")
     public Set<Alert> search(@RequestParam(value = HOST, defaultValue = STAR) String host,
                              @RequestParam(value = APPLICATION, defaultValue = STAR) String application,
                              @RequestParam(value = START_TIME, defaultValue = MINUS_ONE) String startTime,
