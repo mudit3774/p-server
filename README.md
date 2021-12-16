@@ -51,10 +51,10 @@ Search for all alerts :
 
 `
 curl -X GET \
-http://localhost:8080/search \
--H 'cache-control: no-cache' \
--H 'content-type: application/x-www-form-urlencoded' \
--H 'postman-token: 8ef1a0bb-fb79-9826-b7e0-fc8884f533b5'
+  http://localhost:8080/v1/alert/search \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -H 'postman-token: 30122964-c12b-abe1-030e-50a97f6dbf82'
 `
 
 and this should return alerts
